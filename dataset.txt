@@ -1,0 +1,16 @@
+https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017?resource=download
+
+This file that I am planning to analyze consists of results football(soccer) games since 1872 to 2017
+There are 3 datasets available in this the results the goal sccorers and the shootouts.
+
+  We could potentially analyze who was the top goal scorer and what was the mean time at which 
+  goals were scored.
+
+  Another option that we can pursue is https://www.kaggle.com/datasets/gregorut/videogamesales
+  This dataset talks about video games sales and which publisher,genre, year, video game had the best sales
+    across, North america, Japan, europe and worldwide.
+
+      We can plot the sales on a graph using adot plot the way we did in hw6 and analyze the shape of the graph 
+      based on the mean and standard deviation of the results. 
+      
+  
