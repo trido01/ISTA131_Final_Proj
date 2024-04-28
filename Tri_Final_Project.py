@@ -12,8 +12,6 @@ import matplotlib.pyplot as plt
 
 
 
-
-
 # bar_chart 
 def bar_chart(file):
     file['Age'] = pd.to_numeric(file['Age'], errors='coerce')
@@ -27,7 +25,17 @@ def bar_chart(file):
 
     plt.bar(age_group_means['Age'], age_group_means['Gls'], color='b', alpha=0.7, label='Average Goals Scored')
 
+    coefficients = np.polyfit(age_group_means['Age'], age_group_means['Gls'], 3)  # Use a third-degree polynomial
+    file = file.dropna(subset=['Age', 'Gls'])
+
+    age_group_means = file.groupby('Age')['Gls'].mean().reset_index()
+
+    plt.figure(figsize=(12, 7))
+
+    plt.bar(age_group_means['Age'], age_group_means['Gls'], color='b', alpha=0.7, label='Average Goals Scored')
+
     coefficients = np.polyfit(age_group_means['Age'], age_group_means['Gls'], 3)
+
     curve_fit = np.poly1d(coefficients)
     curve_x = np.linspace(min(age_group_means['Age']), max(age_group_means['Age']), 100)
     curve_y = curve_fit(curve_x)
@@ -46,8 +54,16 @@ def scat_plot(file):
     file['Age'] = pd.to_numeric(file['Age'], errors='coerce')
     file['Gls'] = pd.to_numeric(file['Gls'], errors='coerce')
 
-    # Drop rows with NaN values in 'Age' or 'Gls'
     file = file.dropna(subset=['Age', 'Gls'])
+
+    age = file['Age']
+    goals = file['Gls']
+
+    plt.figure(figsize=(12, 7))
+
+    plt.scatter(age, goals, color='b', alpha=0.7, label='Goals Scored by Age')
+
+    coefficients = np.polyfit(age, goals, 3) 
 
     age = file['Age']
     goals = file['Gls']
@@ -56,8 +72,8 @@ def scat_plot(file):
 
     plt.scatter(age, goals, color='b', alpha=0.7, label='Goals Scored')
 
-    # chatgpt help
     coefficients = np.polyfit(age, goals, 3) 
+    
     curve_fit = np.poly1d(coefficients)
     curve_x = np.linspace(min(age), max(age), 100)
     curve_y = curve_fit(curve_x)
@@ -88,6 +104,8 @@ def line_plt(file):
 
 def main():
     f = pd.read_csv("player_shooting_2023_2024.csv")
+    data_processing(f)
+=======
     bar_chart(f)
     scat_plot(f)
     line_plt(f)
