@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-# bar_chart 
+# Bar Chart 
 def bar_chart(file):
     file['Age'] = pd.to_numeric(file['Age'], errors='coerce')
     file['Gls'] = pd.to_numeric(file['Gls'], errors='coerce')
