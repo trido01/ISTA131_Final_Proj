@@ -104,8 +104,6 @@ def line_plt(file):
 
 def main():
     f = pd.read_csv("player_shooting_2023_2024.csv")
-    data_processing(f)
-=======
     bar_chart(f)
     scat_plot(f)
     line_plt(f)
