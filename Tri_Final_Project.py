@@ -102,6 +102,7 @@ def main():
     bar_chart(file)
     scat_plot(file)
     line_plt(file2)
+
     
 
 if __name__ == "__main__":
