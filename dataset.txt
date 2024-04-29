@@ -12,5 +12,11 @@ There are 3 datasets available in this the results the goal sccorers and the sho
 
       We can plot the sales on a graph using adot plot the way we did in hw6 and analyze the shape of the graph 
       based on the mean and standard deviation of the results. 
-      
+
+
+
+
+  We are using a different dataset for our final project.    
   
+https://www.kaggle.com/datasets/efaniorimutembo/epl-player-shooting-stats-23-24-premier-league
+https://www.kaggle.com/datasets/quadeer15sh/premier-league-standings-11-seasons-20102021
